@@ -11,9 +11,10 @@ get_conectBD = function(){
   driver <- RPostgreSQL::PostgreSQL()
   dbname <- "contagios_covid"
   url_host <- "localhost"
+  user = "postgres"
   port <- 5432
   password <- "123456"
-  conexion_BD <- dbConnect(driver, dbname = dbname, host = url_host, port = port, user = "postgres", password = password) 
+  conexion_BD <- dbConnect(driver, dbname = dbname, host = url_host, port = port, user = user, password = password) 
   return (conexion_BD)
 }
 
@@ -53,7 +54,7 @@ function(name = "") {
 #* @serializer png
 #* @get /plot_provincia
 function(campo = "") {
-  query <- paste0("SELECT * from provincia")
+  query <- "SELECT * from provincia"
   connection <- get_conectBD()
   provincias <- dbGetQuery(connection, query)
   dbDisconnect(connection)
