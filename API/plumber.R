@@ -20,10 +20,11 @@ HEAD, OPTIONS, PATCH")
   
   res$setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-
 Requested-with, Origin, authorization")
-  
+
   plumber::forward()
 }
 
+# Conexion a la base de datos
 get_conectBD = function(){
   driver <- RPostgreSQL::PostgreSQL()
   doc <- dirname(getActiveDocumentContext()$path)
