@@ -1,19 +1,27 @@
 # INSTALACION DE PAQUETES
 # install.packages("plumber")
 # install.packages("RPostgreSQL")
+# install.packages("DBI")
+# install.packages("jsonlite")
+# install.packages("rstudioapi")
 
 # CARGA DE PAQUETES
 library(plumber)
 library(RPostgreSQL)
 library(DBI)
+library(jsonlite)
+library(rstudioapi)
 
 get_conectBD = function(){
   driver <- RPostgreSQL::PostgreSQL()
-  dbname <- "contagios_covid"
-  url_host <- "localhost"
-  user = "postgres"
-  port <- 5432
-  password <- "123456"
+  doc <- dirname(getActiveDocumentContext()$path)
+  ruta_archivo <- paste(doc, "/", "config.json",sep = "")
+  json = fromJSON(ruta_archivo)
+  dbname <- json$db_name
+  url_host <- json$db_host
+  user = json$db_user
+  port <- json$db_port
+  password <- json$db_pass
   conexion_BD <- dbConnect(driver, dbname = dbname, host = url_host, port = port, user = user, password = password) 
   return (conexion_BD)
 }
