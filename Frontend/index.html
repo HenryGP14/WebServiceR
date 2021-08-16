@@ -8,15 +8,34 @@
         <title>Histograma</title>
     </head>
     <body>
-        <header></header>
-        <main>
+        <header>
             <div class="contenedor-inverso">
                 <h3>¿Qué es un Histograma?</h3>
                 <p>Los histogramas son gráficos que indican la frecuencia de un hecho mediante una distribución de los datos. Los histogramas no se pueden elaborar con atributos, sino con variables medibles tales como peso, temperatura, tiempo, etc.</p>
                 <p>En definitiva, un histograma es una representación gráfica de una variable en forma de barras, donde la superficie de cada barra es proporcional a la frecuencia de los valores representados. En el eje vertical se representan las frecuencias, y en el eje horizontal los valores de las variables, normalmente señalando las marcas de clase, es decir, la mitad del intervalo en el que están agrupados los datos.</p>
             </div>
+        </header>
+        <main>
             <div class="contenedor">
-                <img src="" id="imgPlot"/>
+                <h3>¿De dónde se obtienen los datos?</h3>
+                <p>Los datos son obtenidos desde la base de datos provincia que registra valores de:</p>
+                <p> * Superficie<br>
+                    * Hombres<br>
+                    * Mujeres<br>
+                    * Capital<br>
+                    * Población total<br>
+                    * Contagiados<br>
+                    * Recuperados<br>
+                    * Fallecidos</p>
+            </div>
+            <div class="contenedor">
+                <h3>Seleccione un campo para obtener el histograma</h3>
+                <select name="cmbCampos" id="cmbCampos">
+                    <option value="todas_las_provincias" selected>Todas las provincias</option>
+                    <option value="por_id">Por id</option>
+                    <option value="por_nombre">Por nombre</option>
+                </select>
+                <img src="" id="imgPlot" alt=""/>
             </div>
         </main>
         <footer></footer>
