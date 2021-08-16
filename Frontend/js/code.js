@@ -14,7 +14,7 @@ getProvinciaId(5);
 getProvinciaName('Azuay');
 getProvinciaPlot('contagiados');
 function getProvincias(){
-    fetch('http://127.0.0.1:7721/provincias')
+    fetch('http://127.0.0.1:3731/provincias')
     .then(response => response.json())
     .then(json =>{
         json.forEach(element => {
@@ -24,14 +24,14 @@ function getProvincias(){
     
 }
 function getProvinciaId(id){
-    fetch('http://127.0.0.1:7721/provincia_id?id='+id)
+    fetch('http://127.0.0.1:3731/provincia_id?id='+id)
     .then(response => response.json())
     .then(json =>{
         console.log(json[0]);
     })
 }
 function getProvinciaName(name){
-    fetch('http://127.0.0.1:7721/provincia_name?name='+name)
+    fetch('http://127.0.0.1:3731/provincia_name?name='+name)
     .then(response => response.json())
     .then(json =>{
         console.log(json[0]);
@@ -39,5 +39,5 @@ function getProvinciaName(name){
 }
 function getProvinciaPlot(campo){
     document.getElementById('imgPlot')
-    .setAttribute("src", "http://127.0.0.1:7721/plot_provincia?campo="+campo);
+    .setAttribute("src", "http://127.0.0.1:3731/plot_provincia?campo="+campo);
 }

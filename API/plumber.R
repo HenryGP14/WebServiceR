@@ -12,6 +12,18 @@ library(DBI)
 library(jsonlite)
 library(rstudioapi)
 
+#* @filter cors
+cors <- function(res) {
+  res$setHeader("Access-Control-Allow-Origin", "*") # Or whatever
+  res$setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, USE, DELETE,
+HEAD, OPTIONS, PATCH")
+  
+  res$setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-
+Requested-with, Origin, authorization")
+  
+  plumber::forward()
+}
+
 get_conectBD = function(){
   driver <- RPostgreSQL::PostgreSQL()
   doc <- dirname(getActiveDocumentContext()$path)
