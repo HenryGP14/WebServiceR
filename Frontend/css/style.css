@@ -6,7 +6,7 @@ body{
 }
 
 header, main, footer{
-    padding: 25px 250px;
+    padding: 25px 200px;
 }
 
 header{
@@ -15,14 +15,27 @@ header{
 
 .contenedor-inverso{
     color: white;
+    padding: 0px 25px;
 }
 
 .contenedor{
-    border-radius: 0px 0px 5px 5px black;
+    margin-bottom: 16px;
     color: rgb(27, 27, 27);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 9px 3px rgb(0 0 0 / 16%);
 }
 
 /*Elementos puros*/
 h3{
     margin: 0px;
+}
+
+select, input{
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    width: 200px;
+    border: 1px solid #03565c;
 }

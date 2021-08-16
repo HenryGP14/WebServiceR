@@ -1,3 +1,14 @@
+var cmbCampos = document.getElementById('cmbCampos');
+var parametro = document.getElementById('parametro');
+cmbCampos.onchange = function(e){
+    if(cmbCampos.value !== "todas_las_provincias"){
+        parametro.type = "text"
+    }
+    else{
+        parametro.type = "hidden"
+    }
+}
+
 getProvincias();
 getProvinciaId(5);
 getProvinciaName('Azuay');
