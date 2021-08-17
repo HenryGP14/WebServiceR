@@ -32,11 +32,19 @@
                 <h3>Seleccione un campo para obtener el histograma</h3>
                 <select name="cmbCampos" id="cmbCampos">
                     <option value="todas_las_provincias" selected>Todas las provincias</option>
-                    <option value="por_id">Por id</option>
-                    <option value="por_nombre">Por nombre</option>
                 </select>
-                <input type="hidden" value="" id="parametro">
-                <button id="btnBuscar" class="btn btn-primary">Buscar</button>
+                <div id="lista_plot">
+                    <ul><li><button onclick="getProvinciaPlot('superficie')">Superficie</button></li>
+                        <li><button onclick="getProvinciaPlot('hombres')">Hombres</button></li>
+                        <li><button onclick="getProvinciaPlot('mujeres')">Mujeres</button></li>
+                        <li><button onclick="getProvinciaPlot('problacion_total')">Poblacion total</button></li>
+                        <li><button onclick="getProvinciaPlot('contagiados')">Contagiados</button></li>
+                        <li><button onclick="getProvinciaPlot('recuperados')">Recuperados</button></li>
+                        <li><button onclick="getProvinciaPlot('fallecidos')">Fallecidos</button></li>
+                    </ul>
+                </div>
+                <p id="contentData">
+                </p>
                 <img src="" id="imgPlot" alt=""/>
             </div>
         </main>
